@@ -5,15 +5,23 @@
 
 #define LOG_TAG "vendor.lineage.touch-service.motorola"
 
+#ifdef HTPR_CONTROL_PATH
 #include "HighTouchPollingRate.h"
+#endif
+#ifdef SINGLE_TAP_CONTROL_PATH
 #include "TouchscreenGesture.h"
+#endif
 
 #include <android-base/logging.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
+#ifdef HTPR_CONTROL_PATH
 using aidl::vendor::lineage::touch::HighTouchPollingRate;
+#endif
+#ifdef SINGLE_TAP_CONTROL_PATH
 using aidl::vendor::lineage::touch::TouchscreenGesture;
+#endif
 
 int main() {
     binder_status_t status = STATUS_OK;
