@@ -45,15 +45,6 @@ cc_library {
 }
 
 cc_library {
-    name: "libudfpshandler_moto_egistec",
-    defaults: ["libudfpshandler_moto_defaults"],
-    srcs: ["UdfpsHandlerEgistec.cpp"],
-    shared_libs: [
-        "vendor.egistec.hardware.fingerprint@4.0",
-    ],
-}
-
-cc_library {
     name: "libudfpshandler_moto_goodix",
     defaults: ["libudfpshandler_moto_defaults"],
     srcs: ["UdfpsHandlerGoodix.cpp"],
